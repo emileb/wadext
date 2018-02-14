@@ -35,6 +35,11 @@
 
 #pragma warning(disable:4996)
 
+#ifdef __ANDROID__
+#include <android/log.h>
+#define printf(...) ((void)__android_log_print(ANDROID_LOG_INFO,"wadext", __VA_ARGS__))
+#endif
+
 bool isLevel(WadItemList * we);
 char profile[256];
 char maindir[128];
@@ -536,7 +541,7 @@ std::string ExtractFileBase(const char *path, bool include_extension)
 }
 
 
-void ExtractWad(char * wadfilename,int options)
+void ExtractWad(const char * wadfilename,int options)
 {
 	WadItemList pTex1(-1), pTex2(-1), pPnam(-1);
 

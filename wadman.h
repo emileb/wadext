@@ -232,7 +232,7 @@ struct ImportInf
 
 
 //void CloseWadFile(WadInfo * wi);
-void OpenMainWad(char * filename);
+void OpenMainWad(const char * filename);
 void ClosePatchWad(const char * filename);
 void * GetWadItem(char * name,int * pLength);
 void FreeWadItem(char * name,char * blockstart=NULL);

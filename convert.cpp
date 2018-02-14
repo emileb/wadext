@@ -290,7 +290,7 @@ bool done;
 
 const uint8_t *GetPalette(int flags)
 {
-	if (ppal) return ppal;
+	//if (ppal) return ppal;
 	int pplump = mainwad->FindLump("PLAYPAL");
 	if (pplump >= 0)
 	{
@@ -538,6 +538,7 @@ void WritePNG(const uint8_t *bufferRGBA, int width, int height, int leftofs, int
 	static const uint8_t iend[12] = { 0,0,0,0,73,69,78,68,174,66,96,130 };
 	fwrite(iend, 1, 12, f);
 	fclose(f);
+	delete[] bufferPaletted;
 }
 
 

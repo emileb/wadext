@@ -179,7 +179,7 @@ const char * CWADFile::GetLumpName(int lump)
 //==========================================================================
 CWADFile *mainwad;
 
-void OpenMainWad(char *filename)
+void OpenMainWad(const char *filename)
 {
 	mainwad = new CWADFile(filename);
 	if (mainwad->NumLumps() == 0)

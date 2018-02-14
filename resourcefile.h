@@ -83,6 +83,6 @@ struct WadItemList
 	const char * Name() const { return mainwad->GetLumpName(mLump); }
 };
 
-void OpenMainWad(char * filename);
+void OpenMainWad(const char * filename);
 
 #endif
